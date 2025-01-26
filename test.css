@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.gallery {
+  --size: 50px;
+  display: grid;
+  grid-template-columns: repeat(8, var(--size));
+  grid-auto-rows: var(--size);
+  margin-bottom: var(--size);
+  place-items: start center;
+  gap: 10px;
+  
+  /* Remove :has() pseudo-class as it's not supported in all browsers */
+  /* Instead, target hover and focus on the img elements directly */
+}
+
+.gallery img {
+  object-fit: cover;
+  width: 100%; /* Allow the image to fill the grid item */
+  height: 100%; /* Allow the image to fill the grid item */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: clip-path 0.65s, transform 0.3s ease, filter 0.75s;
+  grid-column: auto / span 2;
+  border-radius: 5px;
+
+  &:nth-child(7n + 1) { 
+    grid-column: 2 / span 2;
+  }
+
+  &:hover,
+  &:focus {
+    /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+    z-index: 1;
+    transform: scale(1.5); /* Make the image bigger on hover */
+    transition: clip-path 0.45s, transform 0.25s ease, filter 0.25s ease;
+  }
+
+  &:focus {
+    outline: 1px dashed black;
+    outline-offset: -5px;
+  }
+}
