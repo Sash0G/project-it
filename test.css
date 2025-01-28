@@ -1,46 +1,120 @@
-* {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
+
+.navigation {
+  width: 400px;
+  height: 70px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 
-.gallery {
-  --size: 50px;
-  display: grid;
-  grid-template-columns: repeat(8, var(--size));
-  grid-auto-rows: var(--size);
-  margin-bottom: var(--size);
-  place-items: start center;
-  gap: 10px;
-  
-  /* Remove :has() pseudo-class as it's not supported in all browsers */
-  /* Instead, target hover and focus on the img elements directly */
+.navigation ul {
+  display: flex;
+  width: 350px;
 }
 
-.gallery img {
-  object-fit: cover;
-  width: 100%; /* Allow the image to fill the grid item */
-  height: 100%; /* Allow the image to fill the grid item */
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  transition: clip-path 0.65s, transform 0.3s ease, filter 0.75s;
-  grid-column: auto / span 2;
-  border-radius: 5px;
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
 
-  &:nth-child(7n + 1) { 
-    grid-column: 2 / span 2;
-  }
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
 
-  &:hover,
-  &:focus {
-    /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
-    z-index: 1;
-    transform: scale(1.5); /* Make the image bigger on hover */
-    transition: clip-path 0.45s, transform 0.25s ease, filter 0.25s ease;
-  }
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--clr);
+}
 
-  &:focus {
-    outline: 1px dashed black;
-    outline-offset: -5px;
-  }
+.navigation ul li.active a .icon {
+  transform: translateY(-32px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: var(--clr);
+  font-weight: 400;
+  font-size: 00.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: #29fd53;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow:  1px -10px 0 0 var(--clr);
+}
+
+.indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow:  -1px -10px 0 0 var(--clr);
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(70px * 4));
 }
