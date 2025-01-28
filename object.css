@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.title h1 {
+  font-family: "Comic Sans MS";
+  color: white;
+  position: relative;
+  margin-top: 35vh;
+}
+.title {
+  margin-top: 0px;
+  height: 100vh;
+  font-size: 5rem;
+  text-align: center;
+  position: sticky;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title img {
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+  margin-top: auto;
+}
+.grid {
+  margin-top: 20%;
+  display: grid;
+  grid-template-columns: repeat(3);
+  column-gap: 10%;
+  row-gap: 30%;
+  width: 80%;
+  place-content: center;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+}
+.grid img {
+  border-radius: 40px;
+  border: 10px solid #90be90;
+  width: 15vw;
+  height: 15vw;
+}
+.grid-item:hover {
+  transform: scale(1.05);
+
+  /* Apply the hover scale on parent item */
+}
+.grid-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.grid-item:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.grid-item:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.grid-item:nth-child(4) {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.grid-item:nth-child(5) {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}

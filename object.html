@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="object.css">
+</head>
+<body>
+    <div class="title" id="title">
+        <h1>AVMTourism</h1>
+        <script>
+        const fadeText = document.getElementById('title');
+        
+        window.addEventListener('scroll', () => {
+          // Get the scroll position relative to the viewport
+          const scrollY = window.scrollY;
+          const fadeStart = 50; // Start fading after scrolling 100px
+          const fadeEnd = 300;  // Fully faded at 400px
+          const fadeRange = fadeEnd - fadeStart;
+    
+          // Calculate opacity
+          if (scrollY > fadeStart) {
+            const opacity = Math.max(0, 1 - (scrollY - fadeStart) / fadeRange);
+            fadeText.style.opacity = opacity;
+          } else {
+            fadeText.style.opacity = 1; // Fully visible at the top
+          }
+        });
+        function scrollToBottom() {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+      </script>
+      <a href="#" onclick="scrollToBottom()" style="position: relative; margin-top: auto;"><img src="arrow.png" alt=""></a>
+    </div>
+    <div class="grid">
+        <div class="grid-item">
+            <a href="object1.html"><img src="IMG_5520.jpg" alt=""></a>
+        </div>
+        <div class="grid-item">
+            <a href="object2.html"><img src="IMG_5520.jpg" alt=""></a>
+        </div>
+        <div class="grid-item">
+            <a href="object3.html"><img src="IMG_5520.jpg" alt=""></a>
+        </div>
+        <div class="grid-item">
+            <a href="object4.html"><img src="IMG_5520.jpg" alt=""></a>
+        </div>
+        <div class="grid-item">
+            <a href="object5.html"><img src="IMG_5520.jpg" alt=""></a>
+        </div>
+    </div>
+    <a id="bot"></a>
+</body>
+</html>

@@ -5,49 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  :root {
+    --clr: #222327;
+  }
+  
+  body{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--clr);
+  } 
+  
+    </style>
 </head>
 <body class="main">
-    <div id="menu-container">
+    <div class="menu-container">
         <div class="navigation">
             <ul>
                 <li class="list active">
-                    <a href="blank.html" target="contentFrame">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <a href="object.html" target="contentFrame" data-show-video="true">
+                        <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
                         <span class="text">Начало</span>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="object1.html" target="contentFrame">
-                        <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
-                        <span class="text">Обекти</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="gallery.html" target="contentFrame">
+                    <a href="gallery.html" target="contentFrame" data-show-video="false">
                         <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
                         <span class="text">Галерия</span>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="contacts.html" target="contentFrame">
+                    <a href="contacts.html" target="contentFrame" data-show-video="false">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="text">За нас</span>
                     </a>
                 </li>
                 <div class="indicator"></div>
             </ul>   
-            </div>
-            <script>
-                const list = document.querySelectorAll('.list');
-           function activeLink(){
-             list.forEach((item) => item.classList.remove('active'));
-             this.classList.add('active');
-           }
-           list.forEach((item) => item.addEventListener('click', activeLink));
-           </script>
-           <iframe id="content" name="contentFrame" src="blank.html"></iframe>.
+        </div>        
+        
+        <video autoplay muted loop id="myVideo" style=" z-index: -1;">
+        <source src="🇧🇬BULGARIA 4K 🇧🇬 AMAZING DRONE Landscapes 720.mp4" type="video/mp4"> 
+     </video>
+        <script>
+            const list = document.querySelectorAll('.list'); // Select all list items
+            const video = document.getElementById('myVideo'); // Reference the video element
 
+            function activeLink(event) {
+                event.preventDefault(); // Prevent default link behavior
+
+                // Remove active class from all items and add to the clicked one
+                list.forEach((item) => item.classList.remove('active'));
+                this.classList.add('active');
+
+                // Determine whether to show or hide the video based on the data attribute
+                const showVideo = this.querySelector('a').getAttribute('data-show-video') === 'true';
+                video.style.display = showVideo ? 'block' : 'none';
+
+                // Load the appropriate iframe content
+                const iframe = document.getElementById('content');
+                iframe.src = this.querySelector('a').getAttribute('href');
+            }
+
+            // Attach event listeners to each navigation item
+            list.forEach((item) => item.addEventListener('click', activeLink));
+        </script>
+
+  
     </div>
+    <iframe id="content" name="contentFrame" src="object.html" ></iframe>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
