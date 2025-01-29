@@ -65,9 +65,3 @@
   transform: translate3d(30%,0,-200px);
 }
 
-#slide1 { background-image:  }
-#slide2 {background-image: url('../IMG_20250106_131919.jpg');
-background-size: cover; }
-#slide3 { background: #CDDC39}
-#slide4 { background: #FFC107 }
-#slide5 { background: #FF5722 }

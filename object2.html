@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Carousel/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body style="display: flex; justify-content: center">
+    <!-- <div id="menu-container"></div> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <div class="ObjectContainer">
+      <h1>Панагюрище</h1>
+      <div class="ObjectContent">
+        <p>
+          Панагюрище е едно от най-емблематичните места в България, където
+          историята, културата и природата привличат туристи от цял свят.
+          Разположен в сърцето на Средна гора, този град очарова с уникалното си
+          историческо наследство, живописни пейзажи и гостоприемна атмосфера.
+        </p>
+
+        <p>
+          Градът е известен със своята история покрай Априлското въстание, което
+          го превръща в символ на българската борба за свобода. Можете да
+          посетите Историческия музей, където се съхраняват артефакти, свързани
+          с този ключов момент от историята, както и Къщата-музей „Райна
+          Княгиня“ – домът на жената ушила байрака.
+        </p>
+        <p>
+          Природата около Панагюрище е впечатляваща. Районът предлага отлични
+          условия за еко-туризъм, разходки и пикници сред горите на Средна гора.
+          Близките минерални извори и спа центрове допълват преживяването,
+          предоставяйки възможност за релакс и възстановяване.
+        </p>
+        <p>
+          Панагюрище е перфектната дестинация за тези, които искат да се потопят
+          в историята, да се насладят на природната красота и да открият
+          богатството на българската култура.
+        </p>
+      </div>
+      <div class="ObjectMap">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23532.101448828664!2d24.169547205251614!3d42.50191184531629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa03373b26b3a3%3A0xd285fc3a8bbab835!2zNDUwMCDQn9Cw0L3QsNCz0Y7RgNC40YnQtQ!5e0!3m2!1sbg!2sbg!4v1738136209524!5m2!1sbg!2sbg"
+          style="border: 30px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="ObjectCarousel">
+        <section id="slider">
+          <input type="radio" name="slider" id="s1" />
+          <input type="radio" name="slider" id="s2" />
+          <input type="radio" name="slider" id="s3" checked />
+          <input type="radio" name="slider" id="s4" />
+          <input type="radio" name="slider" id="s5" />
+          <label for="s1" id="slide1" style="background-image: url(Images/Панагюрище1.jpg); background-repeat: no-repeat; background-size: cover;"></label>
+          <label for="s2" id="slide2" style="background-image: url(Images/Панагюрище2.jpg); background-repeat: no-repeat; background-size: cover;"></label>
+          <label for="s3" id="slide3" style="background-image: url(Images/Панагюрище3.jpg); background-repeat: no-repeat; background-size: cover;"></label>
+          <label for="s4" id="slide4" style="background-image: url(Images/Панагюрище4.jpg); background-repeat: no-repeat; background-size: cover;"></label>
+          <label for="s5" id="slide5" style="background-image: url(Images/Панагюрище5.jpg); background-repeat: no-repeat; background-size: cover;"></label>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

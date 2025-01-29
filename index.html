@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AVMTourism</title>
     <link rel="stylesheet" href="style.css">
     <style>
         #myVideo {
@@ -65,7 +65,7 @@
         </div>        
         
         <video autoplay muted loop id="myVideo" style=" z-index: -1;">
-        <source src="🇧🇬BULGARIA 4K 🇧🇬 AMAZING DRONE Landscapes 720.mp4" type="video/mp4"> 
+        <source src="🇧🇬BULGARIA 4K 🇧🇬 AMAZING DRONE Landscapes 720.mp4#t=6" type="video/mp4"> 
      </video>
         <script>
             const list = document.querySelectorAll('.list'); // Select all list items
@@ -81,7 +81,6 @@
                 // Determine whether to show or hide the video based on the data attribute
                 const showVideo = this.querySelector('a').getAttribute('data-show-video') === 'true';
                 video.style.display = showVideo ? 'block' : 'none';
-
                 // Load the appropriate iframe content
                 const iframe = document.getElementById('content');
                 iframe.src = this.querySelector('a').getAttribute('href');
@@ -89,10 +88,16 @@
 
             // Attach event listeners to each navigation item
             list.forEach((item) => item.addEventListener('click', activeLink));
+
         </script>
 
   
     </div>
+    <script>
+        window.addEventListener("popstate", function () {
+            location.reload(); // Reloads the entire page when going back/forward
+        });
+    </script>
     <iframe id="content" name="contentFrame" src="object.html" ></iframe>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

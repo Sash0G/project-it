@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Carousel/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body style="display: flex; justify-content: center">
+    <!-- <div id="menu-container"></div> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <div class="ObjectContainer">
+      <h1>Велико Търново</h1>
+      <div class="ObjectContent">
+        <p>
+          Велико Търново е един от най-впечатляващите и исторически значими
+          градове в България, известен със своята неповторима атмосфера,
+          средновековна архитектура и зашеметяващи панорамни гледки. Разположен
+          върху хълмовете Царевец, Трапезица и Света гора, над живописните
+          меандри на река Янтра, градът съчетава богато културно наследство с
+          модерен дух.
+        </p>
+        <p>
+          Сред най-големите забележителности е крепостта Царевец – някогашната
+          столица на Второто българско царство, където посетителите могат да
+          разгледат руините на царския дворец, патриаршеската църква и
+          крепостните стени. Вечерната аудиовизуална програма „Звук и светлина“
+          пресъздава величието на средновековния град чрез впечатляващо
+          светлинно шоу.
+        </p>
+        <p>
+          Разходка по Самоводската чаршия потапя туристите в атмосферата на
+          Възраждането, с традиционни занаятчийски работилници, уютни кафенета и
+          галерии. В стария град калдъръмените улици водят към емблематични
+          места като Музея на Възраждането, паметника „Асеневци“ и църквата „Св.
+          Четиридесет мъченици“.
+        </p>
+        <p>
+          Велико Търново е и културен център, където редовно се провеждат
+          фестивали, театрални представления и изложби. Съчетанието от история,
+          изкуство и неповторима атмосфера прави града едно от най-желаните
+          туристически места в България, привличайки посетители от цял свят.
+        </p>
+      </div>
+      <div class="ObjectMap">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46623.51848271446!2d25.591923008106065!3d43.08412804793693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a9214b3d9491dd%3A0x400a01269bf5dc0!2z0JLQtdC70LjQutC-INCi0YrRgNC90L7QstC-!5e0!3m2!1sbg!2sbg!4v1738154589836!5m2!1sbg!2sbg"
+          style="border: 30px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="ObjectCarousel">
+        <section id="slider">
+          <input type="radio" name="slider" id="s1" />
+          <input type="radio" name="slider" id="s2" />
+          <input type="radio" name="slider" id="s3" checked />
+          <input type="radio" name="slider" id="s4" />
+          <input type="radio" name="slider" id="s5" />
+          <label
+            for="s1"
+            id="slide1"
+            style="
+              background-image: url(Images/Търново1.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+            "
+          ></label>
+          <label
+            for="s2"
+            id="slide2"
+            style="
+              background-image: url(Images/Търново2.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+            "
+          ></label>
+          <label
+            for="s3"
+            id="slide3"
+            style="
+              background-image: url(Images/Търново3.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+            "
+          ></label>
+          <label
+            for="s4"
+            id="slide4"
+            style="
+              background-image: url(Images/Търново4.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+            "
+          ></label>
+          <label
+            for="s5"
+            id="slide5"
+            style="
+              background-image: url(Images/Търново5.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+            "
+          ></label>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="object.css">
-</head>
-<body>
+    <link rel="stylesheet" href="object.css" />
+  </head>
+  <body>
     <div class="title" id="title">
-        <h1>AVMTourism</h1>
-        <script>
-        const fadeText = document.getElementById('title');
-        
-        window.addEventListener('scroll', () => {
+      <h1>AVMTourism</h1>
+      <script>
+        const fadeText = document.getElementById("title");
+        window.addEventListener("scroll", () => {
           // Get the scroll position relative to the viewport
           const scrollY = window.scrollY;
           const fadeStart = 50; // Start fading after scrolling 100px
-          const fadeEnd = 300;  // Fully faded at 400px
+          const fadeEnd = 300; // Fully faded at 400px
           const fadeRange = fadeEnd - fadeStart;
-    
+
           // Calculate opacity
           if (scrollY > fadeStart) {
             const opacity = Math.max(0, 1 - (scrollY - fadeStart) / fadeRange);
@@ -28,28 +27,53 @@
           }
         });
         function scrollToBottom() {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          const video = parent.document.getElementById("myVideo"); // Взема видеото от родителския документ
+          const links = document.querySelectorAll("a"); // Всички линкове в object.html
+
+          links.forEach((link) => {
+            link.addEventListener("click", function () {
+              if (this.classList.contains("arrow")) {
+                return;
+              }
+              if (video) {
+                video.style.display = "none"; // Скрива видеото
+              }
+            });
+          });
+        });
       </script>
-      <a href="#" onclick="scrollToBottom()" style="position: relative; margin-top: auto;"><img src="arrow.png" alt=""></a>
+      <a
+        class="arrow"
+        href="#"
+        onclick="scrollToBottom()"
+        style="position: relative; margin-top: auto"
+        ><img src="arrow.png" alt=""
+      /></a>
     </div>
     <div class="grid">
-        <div class="grid-item">
-            <a href="object1.html"><img src="IMG_5520.jpg" alt=""></a>
-        </div>
-        <div class="grid-item">
-            <a href="object2.html"><img src="IMG_5520.jpg" alt=""></a>
-        </div>
-        <div class="grid-item">
-            <a href="object3.html"><img src="IMG_5520.jpg" alt=""></a>
-        </div>
-        <div class="grid-item">
-            <a href="object4.html"><img src="IMG_5520.jpg" alt=""></a>
-        </div>
-        <div class="grid-item">
-            <a href="object5.html"><img src="IMG_5520.jpg" alt=""></a>
-        </div>
+      <div class="grid-item">
+        <a href="object1.html"><img src="Images/Шабла10.jpg" alt="" /></a>
+      </div>
+      <div class="grid-item">
+        <a href="object2.html"><img src="Images/Панагюрище5.jpg" alt="" /></a>
+      </div>
+      <div class="grid-item">
+        <a href="object3.html"><img src="Images/Търново6.jpg" alt="" /></a>
+      </div>
+      <div class="grid-item">
+        <a href="object4.html"><img src="Images/kalofer3.jpg" alt="" /></a>
+      </div>
+      <div class="grid-item">
+        <a href="object5.html"><img src="Images/Езера5.jpeg" alt="" /></a>
+      </div>
     </div>
-    <a id="bot"></a>
-</body>
+
+    
+  </body>
 </html>
